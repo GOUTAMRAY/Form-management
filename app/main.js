@@ -1,5 +1,8 @@
 
 const userForm = document.getElementById("userForm");
+const userPhoto = document.getElementById("userPhoto");
+const userPreview = document.getElementById("userPreview");
+
 const msg = document.querySelector(".msg");
 
 // click form 
@@ -30,7 +33,15 @@ if(!data.name.trim() || !data.email.trim() || !data.mobile.trim()) {
 };
 
 
+// user photo preview 
 
+userPhoto.onchange = (e) => {
+
+
+  const imageUrl = URL.createObjectURL(e.target.files[0]);
+
+  userPreview.setAttribute("src", imageUrl);
+}
 
 
 
